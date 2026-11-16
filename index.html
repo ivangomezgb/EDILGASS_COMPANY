@@ -1,2 +1,1054 @@
 <!DOCTYPE html>
-<a>Hola</a>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0b1324">
+    <title>EDILGASS | Gas Natural en Boyacá: instalación, mantenimiento y certificación</title>
+    <meta name="description" content="EDILGASS: más de 25 años en instalación, mantenimiento y certificación de redes de gas natural. Calentadores, estufas y redes en Belén, Cerinza, Santa Rosa, Duitama, Sogamoso, Paipa y Tunja.">
+    <!-- Favicon Oficial EDILGASS -->
+    <link rel="icon" type="image/png" href="logo-edilgass.png">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            blue: '#2563eb',
+                            blueDark: '#003bb3',
+                            blueLight: '#60a5fa',
+                            orange: '#fa5601',
+                            orangeDark: '#cc4400',
+                            orangeLight: '#ff7326',
+                            dark: '#070d18',
+                            surface: '#0b1324',
+                            card: '#111b33',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Outfit', 'Inter', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts: Outfit & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-[#070d18] text-slate-200 font-sans antialiased selection:bg-brand-orange selection:text-white">
+
+    <!-- Barra superior (solo tablet y computador) -->
+    <div class="hidden md:block bg-[#0b1324] text-slate-400 text-xs border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-9 flex items-center justify-between gap-6">
+            <span class="flex items-center gap-2 min-w-0"><i class="fa-solid fa-location-dot shrink-0"></i><span class="truncate">Belén · Cerinza · Santa Rosa · Duitama · Sogamoso · Paipa · Tunja</span></span>
+            <div class="flex items-center gap-5 shrink-0">
+                <a href="tel:+573112453049" class="hover:text-white transition flex items-center gap-1.5"><i class="fa-solid fa-phone"></i> 311 245 3049</a>
+                <a href="mailto:edilbertogomezia@hotmail.com" class="hidden lg:flex hover:text-white transition items-center gap-1.5"><i class="fa-solid fa-envelope"></i> edilbertogomezia@hotmail.com</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-50 bg-[#0b1324]/95 backdrop-blur-md border-b border-white/10 transition-shadow duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 md:h-20 gap-3">
+                
+                <!-- Logo Oficial EDILGASS sobre Cápsula de Alto Contraste -->
+                <a href="#inicio" class="flex items-center group py-1">
+                    <div class="inline-flex items-center transition-transform duration-300 hover:scale-105">
+                        <img src="logo-edilgass.png" 
+                             alt="EDILGASS - Gas Natural" 
+                             class="logo-img h-9 sm:h-11 md:h-12 w-auto object-contain">
+                    </div>
+                </a>
+
+                <!-- Menú de escritorio (desde 1280px; en pantallas menores se usa el menú de botón) -->
+                <nav class="hidden xl:flex items-center gap-7">
+                    <a href="#inicio" class="text-sm font-medium text-slate-300 hover:text-white transition-colors whitespace-nowrap">Inicio</a>
+                    <a href="#sobre-mi" class="text-sm font-medium text-slate-300 hover:text-white transition-colors whitespace-nowrap">Quiénes somos</a>
+                    <a href="#servicios" class="text-sm font-medium text-slate-300 hover:text-white transition-colors whitespace-nowrap">Servicios</a>
+                    <a href="#obras" class="text-sm font-medium text-slate-300 hover:text-white transition-colors whitespace-nowrap">Obras</a>
+                    <a href="#preguntas" class="text-sm font-medium text-slate-300 hover:text-white transition-colors whitespace-nowrap">Preguntas</a>
+                    <a href="#normativa" class="text-sm font-medium text-slate-300 hover:text-white transition-colors whitespace-nowrap">Normativa</a>
+                </nav>
+
+                <!-- Acciones -->
+                <div class="flex items-center gap-2 sm:gap-3">
+                    <a href="https://wa.me/573112453049?text=Hola%20EDILGASS,%20deseo%20cotizar%20un%20servicio%20de%20gas%20natural" target="_blank" rel="noopener noreferrer" aria-label="Escribir por WhatsApp" class="w-10 h-10 rounded-full border border-white/15 hover:bg-white/10 text-white flex items-center justify-center transition"><i class="fa-brands fa-whatsapp text-xl"></i></a>
+                    <a href="#cotizacion" class="hidden sm:flex btn-brand-accent px-5 py-2.5 rounded-xl text-sm font-bold items-center gap-2"><i class="fa-solid fa-file-invoice"></i> Cotizar</a>
+                    <button id="mobile-menu-btn" type="button" class="xl:hidden w-10 h-10 rounded-full border border-white/15 hover:bg-white/10 text-white flex items-center justify-center transition" aria-label="Abrir menú"><i class="fa-solid fa-bars text-lg"></i></button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menú móvil y tablet -->
+        <div id="mobile-menu" class="hidden xl:hidden bg-[#0b1324] border-t border-white/10 px-4 sm:px-6 py-4 max-h-[calc(100vh-4rem)] overflow-y-auto">
+            <nav class="flex flex-col text-base font-medium text-slate-200">
+                <a href="#inicio" class="mobile-link py-3 border-b border-white/5">Inicio</a>
+                <a href="#sobre-mi" class="mobile-link py-3 border-b border-white/5">Quiénes somos</a>
+                <a href="#servicios" class="mobile-link py-3 border-b border-white/5">Servicios</a>
+                <a href="#obras" class="mobile-link py-3 border-b border-white/5">Obras</a>
+                <a href="#preguntas" class="mobile-link py-3 border-b border-white/5">Preguntas</a>
+                <a href="#normativa" class="mobile-link py-3 border-b border-white/5">Normativa</a>
+            </nav>
+            <div class="grid grid-cols-2 gap-3 mt-4">
+                <a href="tel:+573112453049" class="btn-brand-primary py-3 rounded-xl text-sm font-bold flex items-center justify-center gap-2"><i class="fa-solid fa-phone"></i> Llamar</a>
+                <a href="#cotizacion" class="mobile-link btn-brand-accent py-3 rounded-xl text-sm font-bold flex items-center justify-center gap-2"><i class="fa-solid fa-file-invoice"></i> Cotizar</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section con Efectos de Iluminación Neón -->
+    <section id="inicio" class="relative pt-14 pb-20 md:pt-20 md:pb-32 overflow-hidden bg-[#070d18]">
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Column -->
+                <div class="lg:col-span-7 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900/90 text-slate-200 text-xs sm:text-sm font-semibold mb-6 border border-slate-700/80 shadow-inner">
+                        <span class="flex h-2 w-2 rounded-full bg-brand-orange"></span>
+                        Más de 25 años • Gas Natural • Boyacá
+                    </div>
+
+                    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.15] mb-6">
+                        Expertos en <span class="text-brand-orangeLight">Gas Natural</span>: instalación, mantenimiento y certificación
+                    </h1>
+
+                    <p class="text-base sm:text-lg text-slate-300 mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed"><strong class="text-white font-bold">EDILGASS</strong> lleva más de 25 años instalando, manteniendo y certificando redes de gas natural. Atendemos proyectos residenciales, comerciales e industriales en Belén, Cerinza, Santa Rosa, Duitama, Sogamoso, Paipa y Tunja.</p>
+
+                    <!-- CTAs de Alto Impacto -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-10">
+                        <a href="https://wa.me/573112453049?text=Hola%20EDILGASS,%20deseo%20agendar%20una%20visita%20técnica%20directa" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-7 py-4 rounded-xl text-base font-bold btn-brand-accent flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-xl"></i>
+                            <span>Escribir por WhatsApp</span>
+                        </a>
+                        <a href="#cotizacion" class="w-full sm:w-auto px-7 py-4 rounded-xl text-base font-bold btn-brand-primary text-center flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-envelope-open-text"></i>
+                            <span>Cotizar por Correo</span>
+                        </a>
+                    </div>
+
+                    <!-- Trust Stats Mini -->
+                    <div class="grid grid-cols-3 gap-4 pt-6 border-t border-slate-800 max-w-lg mx-auto lg:mx-0">
+                        <div>
+                            <p class="text-2xl sm:text-3xl font-extrabold text-white">25+</p>
+                            <p class="text-xs text-slate-400 font-medium">Años de experiencia</p>
+                        </div>
+                        <div>
+                            <p class="text-lg sm:text-2xl lg:text-3xl font-extrabold text-white leading-tight">Gas Natural</p>
+                            <p class="text-xs text-slate-400 font-medium">Instalación y certificación</p>
+                        </div>
+                        <div>
+                            <p class="text-2xl sm:text-3xl font-extrabold text-white">7</p>
+                            <p class="text-xs text-slate-400 font-medium">Municipios de Boyacá</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Visual Trust Card con Imagen Real del Técnico -->
+                <div class="lg:col-span-5 relative">
+                    <div class="relative rounded-3xl bg-[#0e1628] shadow-2xl border border-slate-800/90 overflow-hidden group">
+                        
+                        <!-- Imagen Real de Portada (Técnico Profesional) -->
+                        <div class="relative h-72 sm:h-80 w-full overflow-hidden">
+                            <img src="img/red-distribucion-regulador.jpg" alt="Gabinete de regulación y distribución de gas natural instalado por EDILGASS" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                            <!-- Overlay gradiente para legibilidad -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-[#0e1628] via-[#0e1628]/60 to-transparent"></div>
+                            
+                            <!-- Badge Flotante Sobre Imagen -->
+                            <div class="absolute top-4 left-4 bg-black/85 backdrop-blur-md text-white text-xs font-bold px-3 py-1.5 rounded-full border border-white/20 flex items-center gap-2 shadow-lg">
+                                <span class="w-2 h-2 rounded-full bg-brand-orange animate-pulse"></span>
+                                Obra real EDILGASS
+                            </div>
+                        </div>
+
+                        <!-- Contenido de la Tarjeta -->
+                        <div class="p-6 text-white relative">
+                            <div class="flex items-center justify-between mb-4 pb-3 border-b border-slate-800">
+                                <div>
+                                    <h3 class="font-bold text-lg text-white">Atención directa y personalizada</h3>
+                                    <p class="text-xs text-brand-orangeLight">Técnicos especializados en cada servicio</p>
+                                </div>
+                                <div class="w-10 h-10 rounded-xl bg-brand-orange/20 text-brand-orange border border-brand-orange/40 flex items-center justify-center text-lg shadow-inner">
+                                    <i class="fa-solid fa-certificate"></i>
+                                </div>
+                            </div>
+
+                            <!-- Ventajas del trato directo -->
+                            <div class="space-y-2.5 mb-5 text-xs text-slate-300">
+                                <div class="flex items-start gap-2.5">
+                                    <i class="fa-solid fa-circle-check text-brand-orange text-xs mt-0.5"></i>
+                                    <span><strong>Técnicos especializados en cada servicio</strong>, en tu hogar o local.</span>
+                                </div>
+                                <div class="flex items-start gap-2.5">
+                                    <i class="fa-solid fa-circle-check text-brand-orange text-xs mt-0.5"></i>
+                                    <span><strong>Cotización clara:</strong> según el trabajo y la mano de obra.</span>
+                                </div>
+                                <div class="flex items-start gap-2.5">
+                                    <i class="fa-solid fa-circle-check text-brand-orange text-xs mt-0.5"></i>
+                                    <span><strong>Materiales certificados:</strong> cobre y PE-AL-PE para Gas Natural.</span>
+                                </div>
+                            </div>
+
+                            <!-- Direct WhatsApp Box -->
+                            <div class="bg-white/5 border border-white/10 rounded-2xl p-3.5 flex items-center justify-between shadow-xl">
+                                <div class="flex items-center gap-3">
+                                    <i class="fa-brands fa-whatsapp text-2xl text-white"></i>
+                                    <div>
+                                        <p class="text-[11px] font-medium text-slate-400">Línea de atención</p>
+                                        <p class="text-sm font-bold text-white">311 245 3049 · 313 302 5056</p>
+                                    </div>
+                                </div>
+                                <a href="https://wa.me/573112453049?text=Hola%20EDILGASS,%20tengo%20una%20consulta%20técnica%20de%20gas" target="_blank" rel="noopener noreferrer" class="px-3.5 py-1.5 rounded-lg bg-white text-slate-900 text-xs font-bold hover:bg-slate-100 transition shadow">
+                                    Escribir
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: Sobre Quiénes somos -->
+    <section id="emergencias" class="bg-[#0b1324] border-y border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 grid lg:grid-cols-12 gap-6 items-center">
+            <div class="lg:col-span-4">
+                <span class="text-brand-orangeLight font-bold uppercase tracking-wider text-xs">Emergencias por fuga</span>
+                <h2 class="text-xl sm:text-2xl font-extrabold text-white mt-1">¿Hueles a gas? Atendemos emergencias.</h2>
+                <p class="text-slate-400 text-sm mt-1">A veces estamos en otra obra. Si no podemos llegar de inmediato a tu vivienda, haz esto:</p>
+            </div>
+            <ol class="lg:col-span-6 grid sm:grid-cols-2 gap-3 text-sm text-slate-200">
+                <li class="flex items-start gap-3 bg-white/5 border border-white/10 rounded-xl p-3"><span class="shrink-0 w-6 h-6 rounded-full bg-brand-orange text-white text-xs font-bold flex items-center justify-center">1</span><span>Cierra de inmediato la llave principal del contador.</span></li>
+                <li class="flex items-start gap-3 bg-white/5 border border-white/10 rounded-xl p-3"><span class="shrink-0 w-6 h-6 rounded-full bg-brand-orange text-white text-xs font-bold flex items-center justify-center">2</span><span>Abre ventanas y puertas para ventilar.</span></li>
+                <li class="flex items-start gap-3 bg-white/5 border border-white/10 rounded-xl p-3"><span class="shrink-0 w-6 h-6 rounded-full bg-brand-orange text-white text-xs font-bold flex items-center justify-center">3</span><span>No enciendas nada: luces, fósforos ni aparatos.</span></li>
+                <li class="flex items-start gap-3 bg-white/5 border border-white/10 rounded-xl p-3"><span class="shrink-0 w-6 h-6 rounded-full bg-brand-orange text-white text-xs font-bold flex items-center justify-center">4</span><span>Sal de la vivienda mientras se disipa el olor y llámanos desde afuera.</span></li>
+            </ol>
+            <div class="lg:col-span-2 flex lg:flex-col gap-2">
+                <a href="tel:+573112453049" class="flex-1 text-center px-4 py-3 rounded-xl text-sm font-bold btn-brand-accent"><i class="fa-solid fa-phone mr-1"></i> Llamar</a>
+                <a href="https://wa.me/573112453049?text=Tengo%20una%20emergencia%20por%20fuga%20de%20gas" target="_blank" rel="noopener" class="flex-1 text-center px-4 py-3 rounded-xl text-sm font-bold btn-brand-primary"><i class="fa-brands fa-whatsapp mr-1"></i> WhatsApp</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="sobre-mi" class="py-20 bg-[#0b1324] border-y border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-5">
+                    <div class="relative bg-[#0e172a] rounded-3xl overflow-hidden shadow-2xl border border-slate-800 group">
+                        
+                        <!-- Imagen Real de Herramientas y Trabajo Técnico -->
+                        <div class="relative h-64 sm:h-72 w-full overflow-hidden">
+                            <img src="img/acabado-mueble-cocina.jpg" alt="Manguera flexible y válvula de corte de gas instaladas dentro de un mueble de cocina" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 object-[30%_50%]">
+                            <div class="absolute inset-0 bg-gradient-to-t from-[#0e172a] via-[#0e172a]/40 to-transparent"></div>
+                            
+                            <span class="absolute bottom-4 left-4 text-xs font-bold bg-black/70 text-white px-3 py-1 rounded-full uppercase tracking-wider shadow-lg">
+                                Más de 25 años
+                            </span>
+                        </div>
+
+                        <div class="p-8 text-white">
+                            <span class="text-brand-orangeLight text-xs font-bold uppercase tracking-wider">Nuestro equipo</span>
+                            <h3 class="text-2xl font-bold mt-1 mb-4">Técnicos especializados en gas</h3>
+                            <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                                Instalamos, mantenemos y certificamos con técnicos especializados en instalaciones internas, montaje de calentadores y todo lo relacionado con gas natural.
+                            </p>
+                            <div class="space-y-3 border-t border-slate-800 pt-5 text-xs text-slate-300">
+                                <p class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-orange"></i> Instalaciones internas y montaje de calentadores</p>
+                                <p class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-orange"></i> Preparación para la revisión obligatoria cada 5 años</p>
+                                <p class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-orange"></i> Pruebas de hermeticidad y detección de fugas</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7">
+                    <span class="text-brand-orangeLight font-bold uppercase tracking-wider text-xs">¿Quiénes somos?</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2 mb-6">
+                        Expertos en Gas Natural con más de 25 años de experiencia</h2>
+                    <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-8">EDILGASS es una empresa especializada en instalación, mantenimiento y certificación de redes de gas natural. Atendemos proyectos residenciales, comerciales e industriales en toda la región, garantizando el más alto nivel de seguridad y cumplimiento normativo.</p>
+                    <h2 class="hidden">
+                    </h2>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div class="p-5 rounded-2xl glass-card">
+                            <div class="w-10 h-10 rounded-xl bg-white/5 text-brand-orangeLight border border-white/10 flex items-center justify-center text-lg mb-3">
+                                <i class="fa-solid fa-comments"></i>
+                            </div>
+                            <h4 class="font-bold text-white text-base mb-1">Atención directa</h4>
+                            <p class="text-xs text-slate-400 leading-relaxed">
+                                Hablas con quienes conocen de gas: nos explicas la falla y te orientamos de inmediato.
+                            </p>
+                        </div>
+
+                        <div class="p-5 rounded-2xl glass-card">
+                            <div class="w-10 h-10 rounded-xl bg-white/5 text-brand-orange border border-white/10 flex items-center justify-center text-lg mb-3">
+                                <i class="fa-solid fa-handshake"></i>
+                            </div>
+                            <h4 class="font-bold text-white text-base mb-1">Responsabilidad Total</h4>
+                            <p class="text-xs text-slate-400 leading-relaxed">
+                                Más de 25 años respaldan cada trabajo. Si algo requiere ajuste, respondemos de inmediato.
+                            </p>
+                        </div>
+
+                        <div class="p-5 rounded-2xl glass-card">
+                            <div class="w-10 h-10 rounded-xl bg-white/5 text-brand-orangeLight border border-white/10 flex items-center justify-center text-lg mb-3">
+                                <i class="fa-solid fa-shield-halved"></i>
+                            </div>
+                            <h4 class="font-bold text-white text-base mb-1">Seguridad en tu Hogar</h4>
+                            <p class="text-xs text-slate-400 leading-relaxed">
+                                Técnicos especializados en instalaciones internas, con procedimientos pensados para tu seguridad.
+                            </p>
+                        </div>
+
+                        <div class="p-5 rounded-2xl glass-card">
+                            <div class="w-10 h-10 rounded-xl bg-white/5 text-brand-orange border border-white/10 flex items-center justify-center text-lg mb-3">
+                                <i class="fa-solid fa-tag"></i>
+                            </div>
+                            <h4 class="font-bold text-white text-base mb-1">Precios Justos y Claros</h4>
+                            <p class="text-xs text-slate-400 leading-relaxed">
+                                Cotización según el trabajo, la mano de obra y los materiales, explicada antes de empezar.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section (Dark Tech Glassmorphism) -->
+    <section id="servicios" class="py-24 bg-[#070d18] relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="inline-block px-3.5 py-1 rounded-full bg-white/5 text-brand-orangeLight text-xs font-bold uppercase tracking-wider mb-3 border border-white/10">
+                    Servicios Especializados
+                </span>
+                <h2 class="text-3xl sm:text-5xl font-black text-white tracking-tight mb-4">
+                    Soluciones Directas en Gas Natural
+                </h2>
+                <p class="text-slate-400 text-base sm:text-lg">
+                    Mantenimientos preventivos y correctivos, reparaciones e instalaciones de gas natural con estándares técnicos colombianos.
+                </p>
+            </div>
+
+            <!-- Services Grid: 4 Core Services -->
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 xl:gap-8">
+                
+                <!-- Service 1: Calentadores -->
+                <div class="group glass-card rounded-3xl overflow-hidden flex flex-col justify-between">
+                    <div>
+                        <div class="relative h-48 w-full overflow-hidden bg-slate-900">
+                            <img src="img/calentador-challenger-premium.jpg" alt="Calentador Challenger Premium instalado con ducto de evacuación" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 object-[50%_40%]">
+                            <span class="absolute top-3 left-3 bg-black/70 text-white text-[11px] font-bold px-2.5 py-1 rounded-lg backdrop-blur-sm border border-white/10">
+                                Calentadores
+                            </span>
+                        </div>
+
+                        <div class="p-6">
+                            <span class="text-xs font-bold uppercase tracking-wider text-brand-orangeLight">Servicio Directo</span>
+                            <h3 class="text-lg font-bold text-white mt-1 mb-2">
+                                Arreglo y Mantenimiento de Calentadores
+                            </h3>
+                            <p class="text-slate-400 text-xs leading-relaxed mb-4">
+                                Mantenimiento preventivo para evitar acumulación de hollín, fallas en el purgado o fugas de monóxido de carbono en calentadores de paso o acumulación.
+                            </p>
+                            
+                            <ul class="space-y-2 text-xs text-slate-300 mb-6 font-medium">
+                                <li class="flex items-center gap-2">
+                                    <i class="fa-solid fa-circle-check text-brand-orangeLight"></i> Deshollinado y limpieza profunda
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <i class="fa-solid fa-circle-check text-brand-orangeLight"></i> Calibración y termostatos
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <i class="fa-solid fa-circle-check text-brand-orangeLight"></i> Prevención de monóxido tóxico
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <i class="fa-solid fa-circle-check text-brand-orangeLight"></i> Solución a apagados inesperados
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="px-6 pb-6">
+                        <button onclick="prefillQuote('Arreglo y Mantenimiento de Calentadores')" class="w-full py-2.5 px-4 rounded-xl text-xs font-bold bg-slate-800/80 hover:bg-brand-orange text-slate-200 hover:text-white transition-all flex items-center justify-center gap-2 border border-slate-700">
+                            <span>Cotizar</span>
+                            <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Service 2: Estufas y Hornos -->
+                <div class="group glass-card rounded-3xl overflow-hidden flex flex-col justify-between">
+                    <div>
+                        <div class="relative h-48 w-full overflow-hidden bg-slate-900">
+                            <img src="img/estufa-empotrar.jpg" alt="Estufa de empotrar de cuatro puestos instalada" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 object-[50%_40%]">
+                            <span class="absolute top-3 left-3 bg-black/70 text-white text-[11px] font-bold px-2.5 py-1 rounded-lg shadow-md">
+                                Estufas y hornos
+                            </span>
+                        </div>
+
+                        <div class="p-6">
+                            <span class="text-xs font-bold uppercase tracking-wider text-brand-orangeLight">Combustión Segura</span>
+                            <h3 class="text-lg font-bold text-white mt-1 mb-2">
+                                Mantenimiento y Arreglo de Estufas
+                            </h3>
+                            <p class="text-slate-400 text-xs leading-relaxed mb-4">
+                                Servicio técnico especializado para estufas domésticas e industriales, cubiertas y hornos. Calibración exacta para combustión limpia.
+                            </p>
+                            
+                            <ul class="space-y-2 text-xs text-slate-300 mb-6 font-medium">
+                                <li class="flex items-center gap-2">
+                                    <i class="fa-solid fa-circle-check text-brand-orange"></i> Destape y calibración de espreas
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <i class="fa-solid fa-circle-check text-brand-orange"></i> Calibración a flama azul (cero hollín)
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <i class="fa-solid fa-circle-check text-brand-orange"></i> Cambio de válvulas y termocuplas
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <i class="fa-solid fa-circle-check text-brand-orange"></i> Reparación de encendido eléctrico
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="px-6 pb-6">
+                        <button onclick="prefillQuote('Mantenimiento y Arreglo de Estufas')" class="w-full py-2.5 px-4 rounded-xl text-xs font-bold bg-slate-800/80 hover:bg-brand-orange text-slate-200 hover:text-white transition-all flex items-center justify-center gap-2 border border-slate-700">
+                            <span>Cotizar</span>
+                            <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Service 3: Instalación de Equipos (Foto Real Completa) -->
+                <div class="group glass-card rounded-3xl overflow-hidden flex flex-col justify-between">
+                    <div>
+                        <!-- Foto Real Completa y Adaptada -->
+                        <div class="relative h-64 sm:h-72 w-full overflow-hidden bg-black/80 flex items-center justify-center cursor-pointer group/img" onclick="openImageModal('calentador-instalado.jpg', 'Instalación de Calentador de Paso a Gas con Ducto de Evacuación y Manguera Certificada - EDILGASS')">
+                            <!-- Fondo ambiental desenfocado -->
+                            <img src="calentador-instalado.jpg" 
+                                 alt="" 
+                                 aria-hidden="true" 
+                                 class="absolute inset-0 w-full h-full object-cover blur-md opacity-30 pointer-events-none scale-110">
+                            
+                            <!-- Foto completa visible de punta a punta -->
+                            <img src="calentador-instalado.jpg" 
+                                 alt="Instalación real de calentador de paso a gas con ducto de evacuación y manguera certificada por EDILGASS" 
+                                 loading="lazy"
+                                 class="relative z-10 h-full w-full object-contain p-2 group-hover:scale-105 transition-transform duration-500 drop-shadow-2xl">
+                            
+                            <span class="absolute top-3 left-3 z-20 bg-black/70 text-white text-[11px] font-bold px-2.5 py-1 rounded-lg backdrop-blur-sm flex items-center gap-1.5 shadow-lg">
+                                <i class="fa-solid fa-camera"></i> Instalación
+                            </span>
+
+                            <span class="absolute bottom-3 right-3 z-20 bg-black/80 hover:bg-brand-orange text-white text-[10px] font-bold px-2.5 py-1 rounded-md backdrop-blur-sm flex items-center gap-1.5 transition shadow">
+                                <i class="fa-solid fa-expand"></i> Ver Completa
+                            </span>
+                        </div>
+
+                        <div class="p-6">
+                            <span class="text-xs font-bold uppercase tracking-wider text-brand-orangeLight">Montaje Certificado</span>
+                            <h3 class="text-lg font-bold text-white mt-1 mb-2">
+                                Instalación de Calentadores y Estufas
+                            </h3>
+                            <p class="text-slate-400 text-xs leading-relaxed mb-4">
+                                Montaje técnico de calentadores de paso continuo y acumulación: anclaje seguro, ducto en acero inoxidable para monóxido y manguera reglamentaria.
+                            </p>
+                            
+                            <ul class="space-y-2 text-xs text-slate-300 mb-6 font-medium">
+                                <li class="flex items-center gap-2">
+                                    <i class="fa-solid fa-circle-check text-brand-orangeLight"></i> Ducto de evacuación de monóxido
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <i class="fa-solid fa-circle-check text-brand-orangeLight"></i> Mangueras flexibles de gas certificadas
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <i class="fa-solid fa-circle-check text-brand-orangeLight"></i> Válvulas de corte con sello de calidad
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <i class="fa-solid fa-circle-check text-brand-orangeLight"></i> Prueba de hermeticidad y encendido
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="px-6 pb-6">
+                        <button onclick="prefillQuote('Instalación de Estufas y Calentadores')" class="w-full py-2.5 px-4 rounded-xl text-xs font-bold bg-slate-800/80 hover:bg-brand-orange text-slate-200 hover:text-white transition-all flex items-center justify-center gap-2 border border-slate-700">
+                            <span>Cotizar Instalación</span>
+                            <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Service 4: Instalaciones Residenciales y Comerciales -->
+                <div class="group glass-card rounded-3xl overflow-hidden flex flex-col justify-between">
+                    <div>
+                        <div class="relative h-48 w-full overflow-hidden bg-slate-900">
+                            <img src="img/medidores-multivivienda.jpg" alt="Gabinete con cuatro medidores de gas natural, regulador y tubería de distribución" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 object-[50%_45%]">
+                            <span class="absolute top-3 left-3 bg-black/70 text-white text-[11px] font-bold px-2.5 py-1 rounded-lg backdrop-blur-sm border border-white/10">
+                                Medidores y redes
+                            </span>
+                        </div>
+
+                        <div class="p-6">
+                            <span class="text-xs font-bold uppercase tracking-wider text-brand-orangeLight">Redes Certificadas</span>
+                            <h3 class="text-lg font-bold text-white mt-1 mb-2">
+                                Instalaciones Residenciales y Comerciales
+                            </h3>
+                            <p class="text-slate-400 text-xs leading-relaxed mb-4">
+                                Diseño, trazado y reformas de tuberías en cobre y PE-AL-PE bajo NTC 6015 para casas, restaurantes, panaderías y locales comerciales.
+                            </p>
+                            
+                            <ul class="space-y-2 text-xs text-slate-300 mb-6 font-medium">
+                                <li class="flex items-center gap-2">
+                                    <i class="fa-solid fa-circle-check text-brand-orangeLight"></i> Tubería PE-AL-PE (NTC 6015)
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <i class="fa-solid fa-circle-check text-brand-orangeLight"></i> Cobre soldado de alta exigencia
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <i class="fa-solid fa-circle-check text-brand-orangeLight"></i> Puntos adicionales y traslados
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <i class="fa-solid fa-circle-check text-brand-orangeLight"></i> Preparación para revisión obligatoria
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="px-6 pb-6">
+                        <button onclick="prefillQuote('Instalaciones Residenciales y Comerciales')" class="w-full py-2.5 px-4 rounded-xl text-xs font-bold bg-slate-800/80 hover:bg-brand-orange text-slate-200 hover:text-white transition-all flex items-center justify-center gap-2 border border-slate-700">
+                            <span>Cotizar</span>
+                            <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: Cómo trabajamos -->
+    <section id="proceso" class="py-20 bg-[#0b1324] border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-brand-orangeLight font-bold uppercase tracking-wider text-xs">Cómo trabajamos</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2 mb-3">Así es una instalación con EDILGASS</h2>
+                <p class="text-slate-400 text-sm sm:text-base">Del primer mensaje a la entrega, en cuatro pasos claros.</p>
+            </div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5"><div class="glass-card rounded-2xl p-6"><span class="w-9 h-9 rounded-full bg-brand-orange text-white font-bold flex items-center justify-center mb-4">1</span><h3 class="text-white font-bold mb-2">Nos cuentas qué necesitas</h3><p class="text-slate-400 text-sm leading-relaxed">Por llamada o WhatsApp nos dices cuántos puntos de gas quieres en tu casa: cocina, calentador, asador o terraza.</p></div><div class="glass-card rounded-2xl p-6"><span class="w-9 h-9 rounded-full bg-brand-orange text-white font-bold flex items-center justify-center mb-4">2</span><h3 class="text-white font-bold mb-2">Visita y cotización</h3><p class="text-slate-400 text-sm leading-relaxed">Vamos al predio, revisamos y cotizamos. Definimos si se hace regata para la tubería y qué trabajo extra se requiere; siempre buscamos una solución.</p></div><div class="glass-card rounded-2xl p-6"><span class="w-9 h-9 rounded-full bg-brand-orange text-white font-bold flex items-center justify-center mb-4">3</span><h3 class="text-white font-bold mb-2">Instalación</h3><p class="text-slate-400 text-sm leading-relaxed">Instalamos la tubería y los puntos de gas con el cuidado de dejar tu casa en orden.</p></div><div class="glass-card rounded-2xl p-6"><span class="w-9 h-9 rounded-full bg-brand-orange text-white font-bold flex items-center justify-center mb-4">4</span><h3 class="text-white font-bold mb-2">Pruebas y entrega</h3><p class="text-slate-400 text-sm leading-relaxed">Hacemos pruebas de hermeticidad desde el centro de medición (la caja) para verificar que no haya fugas en el piso. Trabajo pulido y sin fugas, para la seguridad de tu hogar.</p></div></div>
+        </div>
+    </section>
+
+    <!-- SECTION: Nuestros Trabajos -->
+    <section id="obras" class="py-20 bg-[#070d18] border-y border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-8">
+                <span class="text-brand-orangeLight font-bold uppercase tracking-wider text-xs">Nuestros Trabajos</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2 mb-3">Instalaciones y reparaciones reales</h2>
+                <p class="text-slate-400 text-sm sm:text-base">Calentadores, estufas, redes de gas y centros de medición terminados por EDILGASS. Toca una foto para verla completa.</p>
+            </div>
+            <div class="flex flex-wrap justify-center gap-2 mb-10">
+                <button type="button" data-filter="todos" onclick="filterGallery('todos')" class="gallery-filter px-4 py-2 rounded-full text-xs font-bold border transition bg-brand-orange border-brand-orange text-white">Todos</button>
+                <button type="button" data-filter="calentadores" onclick="filterGallery('calentadores')" class="gallery-filter px-4 py-2 rounded-full text-xs font-bold border transition border-white/20 text-slate-300 hover:bg-white/10">Calentadores</button>
+                <button type="button" data-filter="estufas" onclick="filterGallery('estufas')" class="gallery-filter px-4 py-2 rounded-full text-xs font-bold border transition border-white/20 text-slate-300 hover:bg-white/10">Estufas</button>
+                <button type="button" data-filter="redes" onclick="filterGallery('redes')" class="gallery-filter px-4 py-2 rounded-full text-xs font-bold border transition border-white/20 text-slate-300 hover:bg-white/10">Redes e instalaciones</button>
+                <button type="button" data-filter="medidores" onclick="filterGallery('medidores')" class="gallery-filter px-4 py-2 rounded-full text-xs font-bold border transition border-white/20 text-slate-300 hover:bg-white/10">Medidores y gabinetes</button>
+            </div>
+            <div id="gallery-grid" class="columns-2 md:columns-3 gap-4">
+                <button type="button" data-cat="calentadores" data-src="img/calentador-challenger-premium.jpg" data-title="Calentador Challenger Premium" onclick="openImageModal(this.dataset.src,this.dataset.title)" class="group block w-full text-left relative mb-4 break-inside-avoid overflow-hidden rounded-2xl border border-slate-800 bg-black/40"><img src="img/calentador-challenger-premium.jpg" alt="Calentador Challenger Premium" loading="lazy" class="w-full h-auto group-hover:scale-105 transition-transform duration-500"><span class="absolute inset-x-0 bottom-0 p-3 text-left text-xs font-semibold text-white bg-gradient-to-t from-black/80 to-transparent">Calentador Challenger Premium</span></button>
+                <button type="button" data-cat="estufas" data-src="img/estufa-empotrar.jpg" data-title="Estufa de empotrar instalada" onclick="openImageModal(this.dataset.src,this.dataset.title)" class="group block w-full text-left relative mb-4 break-inside-avoid overflow-hidden rounded-2xl border border-slate-800 bg-black/40"><img src="img/estufa-empotrar.jpg" alt="Estufa de empotrar instalada" loading="lazy" class="w-full h-auto group-hover:scale-105 transition-transform duration-500"><span class="absolute inset-x-0 bottom-0 p-3 text-left text-xs font-semibold text-white bg-gradient-to-t from-black/80 to-transparent">Estufa de empotrar instalada</span></button>
+                <button type="button" data-cat="redes" data-src="img/red-pe-al-pe.jpg" data-title="Red PE-AL-PE con válvulas de corte · Belén" onclick="openImageModal(this.dataset.src,this.dataset.title)" class="group block w-full text-left relative mb-4 break-inside-avoid overflow-hidden rounded-2xl border border-slate-800 bg-black/40"><img src="img/red-pe-al-pe.jpg" alt="Red PE-AL-PE con válvulas de corte · Belén" loading="lazy" class="w-full h-auto group-hover:scale-105 transition-transform duration-500"><span class="absolute inset-x-0 bottom-0 p-3 text-left text-xs font-semibold text-white bg-gradient-to-t from-black/80 to-transparent">Red PE-AL-PE con válvulas de corte · Belén</span></button>
+                <button type="button" data-cat="medidores" data-src="img/medidores-multivivienda.jpg" data-title="Cuatro medidores en gabinete" onclick="openImageModal(this.dataset.src,this.dataset.title)" class="group block w-full text-left relative mb-4 break-inside-avoid overflow-hidden rounded-2xl border border-slate-800 bg-black/40"><img src="img/medidores-multivivienda.jpg" alt="Cuatro medidores en gabinete" loading="lazy" class="w-full h-auto group-hover:scale-105 transition-transform duration-500"><span class="absolute inset-x-0 bottom-0 p-3 text-left text-xs font-semibold text-white bg-gradient-to-t from-black/80 to-transparent">Cuatro medidores en gabinete</span></button>
+                <button type="button" data-cat="estufas calentadores" data-src="img/estufa-calentador-cocina.jpg" data-title="Estufa y calentador conectados" onclick="openImageModal(this.dataset.src,this.dataset.title)" class="group block w-full text-left relative mb-4 break-inside-avoid overflow-hidden rounded-2xl border border-slate-800 bg-black/40"><img src="img/estufa-calentador-cocina.jpg" alt="Estufa y calentador conectados" loading="lazy" class="w-full h-auto group-hover:scale-105 transition-transform duration-500"><span class="absolute inset-x-0 bottom-0 p-3 text-left text-xs font-semibold text-white bg-gradient-to-t from-black/80 to-transparent">Estufa y calentador conectados</span></button>
+                <button type="button" data-cat="redes" data-src="img/regata-tuberia.jpg" data-title="Regata con tubería y llave de paso" onclick="openImageModal(this.dataset.src,this.dataset.title)" class="group block w-full text-left relative mb-4 break-inside-avoid overflow-hidden rounded-2xl border border-slate-800 bg-black/40"><img src="img/regata-tuberia.jpg" alt="Regata con tubería y llave de paso" loading="lazy" class="w-full h-auto group-hover:scale-105 transition-transform duration-500"><span class="absolute inset-x-0 bottom-0 p-3 text-left text-xs font-semibold text-white bg-gradient-to-t from-black/80 to-transparent">Regata con tubería y llave de paso</span></button>
+                <button type="button" data-cat="calentadores" data-src="calentador-instalado.jpg" data-title="Calentador con ducto de evacuación" onclick="openImageModal(this.dataset.src,this.dataset.title)" class="group block w-full text-left relative mb-4 break-inside-avoid overflow-hidden rounded-2xl border border-slate-800 bg-black/40"><img src="calentador-instalado.jpg" alt="Calentador con ducto de evacuación" loading="lazy" class="w-full h-auto group-hover:scale-105 transition-transform duration-500"><span class="absolute inset-x-0 bottom-0 p-3 text-left text-xs font-semibold text-white bg-gradient-to-t from-black/80 to-transparent">Calentador con ducto de evacuación</span></button>
+                <button type="button" data-cat="medidores" data-src="img/gabinete-medidor.jpg" data-title="Gabinete ventilado · Belén" onclick="openImageModal(this.dataset.src,this.dataset.title)" class="group block w-full text-left relative mb-4 break-inside-avoid overflow-hidden rounded-2xl border border-slate-800 bg-black/40"><img src="img/gabinete-medidor.jpg" alt="Gabinete ventilado · Belén" loading="lazy" class="w-full h-auto group-hover:scale-105 transition-transform duration-500"><span class="absolute inset-x-0 bottom-0 p-3 text-left text-xs font-semibold text-white bg-gradient-to-t from-black/80 to-transparent">Gabinete ventilado · Belén</span></button>
+                <div data-cat="redes" class="relative mb-4 break-inside-avoid overflow-hidden rounded-2xl border border-slate-800 bg-black/40"><video src="img/red-pe-al-pe-video.mp4" poster="img/red-pe-al-pe-video-poster.jpg" autoplay muted loop playsinline preload="metadata" class="w-full h-auto" aria-label="Red de gas terminada"></video><span class="absolute inset-x-0 bottom-0 p-3 text-left text-xs font-semibold text-white bg-gradient-to-t from-black/80 to-transparent">Red de gas terminada</span></div>
+                <button type="button" data-cat="estufas" data-src="img/conexion-estufa.jpg" data-title="Conexión de gas para estufa" onclick="openImageModal(this.dataset.src,this.dataset.title)" class="group block w-full text-left relative mb-4 break-inside-avoid overflow-hidden rounded-2xl border border-slate-800 bg-black/40"><img src="img/conexion-estufa.jpg" alt="Conexión de gas para estufa" loading="lazy" class="w-full h-auto group-hover:scale-105 transition-transform duration-500"><span class="absolute inset-x-0 bottom-0 p-3 text-left text-xs font-semibold text-white bg-gradient-to-t from-black/80 to-transparent">Conexión de gas para estufa</span></button>
+                <button type="button" data-cat="calentadores" data-src="img/calentador-oka-conexiones.jpg" data-title="Calentador OKA con sus conexiones" onclick="openImageModal(this.dataset.src,this.dataset.title)" class="group block w-full text-left relative mb-4 break-inside-avoid overflow-hidden rounded-2xl border border-slate-800 bg-black/40"><img src="img/calentador-oka-conexiones.jpg" alt="Calentador OKA con sus conexiones" loading="lazy" class="w-full h-auto group-hover:scale-105 transition-transform duration-500"><span class="absolute inset-x-0 bottom-0 p-3 text-left text-xs font-semibold text-white bg-gradient-to-t from-black/80 to-transparent">Calentador OKA con sus conexiones</span></button>
+                <button type="button" data-cat="medidores" data-src="img/conjunto-medidores.jpg" data-title="Centro de medición residencial" onclick="openImageModal(this.dataset.src,this.dataset.title)" class="group block w-full text-left relative mb-4 break-inside-avoid overflow-hidden rounded-2xl border border-slate-800 bg-black/40"><img src="img/conjunto-medidores.jpg" alt="Centro de medición residencial" loading="lazy" class="w-full h-auto group-hover:scale-105 transition-transform duration-500"><span class="absolute inset-x-0 bottom-0 p-3 text-left text-xs font-semibold text-white bg-gradient-to-t from-black/80 to-transparent">Centro de medición residencial</span></button>
+                <button type="button" data-cat="redes" data-src="img/red-multiple-obra.jpg" data-title="Red de gas con llaves de paso en obra" onclick="openImageModal(this.dataset.src,this.dataset.title)" class="group block w-full text-left relative mb-4 break-inside-avoid overflow-hidden rounded-2xl border border-slate-800 bg-black/40"><img src="img/red-multiple-obra.jpg" alt="Red de gas con llaves de paso en obra" loading="lazy" class="w-full h-auto group-hover:scale-105 transition-transform duration-500"><span class="absolute inset-x-0 bottom-0 p-3 text-left text-xs font-semibold text-white bg-gradient-to-t from-black/80 to-transparent">Red de gas con llaves de paso en obra</span></button>
+                <button type="button" data-cat="estufas" data-src="img/acabado-mueble-cocina.jpg" data-title="Válvula y manguera en mueble de cocina" onclick="openImageModal(this.dataset.src,this.dataset.title)" class="group block w-full text-left relative mb-4 break-inside-avoid overflow-hidden rounded-2xl border border-slate-800 bg-black/40"><img src="img/acabado-mueble-cocina.jpg" alt="Válvula y manguera en mueble de cocina" loading="lazy" class="w-full h-auto group-hover:scale-105 transition-transform duration-500"><span class="absolute inset-x-0 bottom-0 p-3 text-left text-xs font-semibold text-white bg-gradient-to-t from-black/80 to-transparent">Válvula y manguera en mueble de cocina</span></button>
+                <button type="button" data-cat="calentadores" data-src="img/calentador-challenger.jpg" data-title="Calentador a gas instalado · Belén" onclick="openImageModal(this.dataset.src,this.dataset.title)" class="group block w-full text-left relative mb-4 break-inside-avoid overflow-hidden rounded-2xl border border-slate-800 bg-black/40"><img src="img/calentador-challenger.jpg" alt="Calentador a gas instalado · Belén" loading="lazy" class="w-full h-auto group-hover:scale-105 transition-transform duration-500"><span class="absolute inset-x-0 bottom-0 p-3 text-left text-xs font-semibold text-white bg-gradient-to-t from-black/80 to-transparent">Calentador a gas instalado · Belén</span></button>
+                <button type="button" data-cat="medidores" data-src="img/gabinete-medidor-regulador.jpg" data-title="Revisión de medidor y regulador" onclick="openImageModal(this.dataset.src,this.dataset.title)" class="group block w-full text-left relative mb-4 break-inside-avoid overflow-hidden rounded-2xl border border-slate-800 bg-black/40"><img src="img/gabinete-medidor-regulador.jpg" alt="Revisión de medidor y regulador" loading="lazy" class="w-full h-auto group-hover:scale-105 transition-transform duration-500"><span class="absolute inset-x-0 bottom-0 p-3 text-left text-xs font-semibold text-white bg-gradient-to-t from-black/80 to-transparent">Revisión de medidor y regulador</span></button>
+                <button type="button" data-cat="redes" data-src="img/valvula-corte-bronce.jpg" data-title="Válvula de corte de bronce" onclick="openImageModal(this.dataset.src,this.dataset.title)" class="group block w-full text-left relative mb-4 break-inside-avoid overflow-hidden rounded-2xl border border-slate-800 bg-black/40"><img src="img/valvula-corte-bronce.jpg" alt="Válvula de corte de bronce" loading="lazy" class="w-full h-auto group-hover:scale-105 transition-transform duration-500"><span class="absolute inset-x-0 bottom-0 p-3 text-left text-xs font-semibold text-white bg-gradient-to-t from-black/80 to-transparent">Válvula de corte de bronce</span></button>
+                <button type="button" data-cat="calentadores" data-src="img/conexiones-calentador-lavadero.jpg" data-title="Conexiones de gas y agua del calentador" onclick="openImageModal(this.dataset.src,this.dataset.title)" class="group block w-full text-left relative mb-4 break-inside-avoid overflow-hidden rounded-2xl border border-slate-800 bg-black/40"><img src="img/conexiones-calentador-lavadero.jpg" alt="Conexiones de gas y agua del calentador" loading="lazy" class="w-full h-auto group-hover:scale-105 transition-transform duration-500"><span class="absolute inset-x-0 bottom-0 p-3 text-left text-xs font-semibold text-white bg-gradient-to-t from-black/80 to-transparent">Conexiones de gas y agua del calentador</span></button>
+                <button type="button" data-cat="redes" data-src="img/red-distribucion-regulador.jpg" data-title="Distribución con regulador" onclick="openImageModal(this.dataset.src,this.dataset.title)" class="group block w-full text-left relative mb-4 break-inside-avoid overflow-hidden rounded-2xl border border-slate-800 bg-black/40"><img src="img/red-distribucion-regulador.jpg" alt="Distribución con regulador" loading="lazy" class="w-full h-auto group-hover:scale-105 transition-transform duration-500"><span class="absolute inset-x-0 bottom-0 p-3 text-left text-xs font-semibold text-white bg-gradient-to-t from-black/80 to-transparent">Distribución con regulador</span></button>
+                <button type="button" data-cat="medidores" data-src="img/medidor-regulador.jpg" data-title="Medidor y regulador" onclick="openImageModal(this.dataset.src,this.dataset.title)" class="group block w-full text-left relative mb-4 break-inside-avoid overflow-hidden rounded-2xl border border-slate-800 bg-black/40"><img src="img/medidor-regulador.jpg" alt="Medidor y regulador" loading="lazy" class="w-full h-auto group-hover:scale-105 transition-transform duration-500"><span class="absolute inset-x-0 bottom-0 p-3 text-left text-xs font-semibold text-white bg-gradient-to-t from-black/80 to-transparent">Medidor y regulador</span></button>
+                <button type="button" data-cat="redes" data-src="img/llave-flexible-ntc.jpg" data-title="Llave de paso y manguera NTC" onclick="openImageModal(this.dataset.src,this.dataset.title)" class="group block w-full text-left relative mb-4 break-inside-avoid overflow-hidden rounded-2xl border border-slate-800 bg-black/40"><img src="img/llave-flexible-ntc.jpg" alt="Llave de paso y manguera NTC" loading="lazy" class="w-full h-auto group-hover:scale-105 transition-transform duration-500"><span class="absolute inset-x-0 bottom-0 p-3 text-left text-xs font-semibold text-white bg-gradient-to-t from-black/80 to-transparent">Llave de paso y manguera NTC</span></button>
+                <button type="button" data-cat="medidores" data-src="img/gabinete-esquina.jpg" data-title="Gabinete de medidor instalado" onclick="openImageModal(this.dataset.src,this.dataset.title)" class="group block w-full text-left relative mb-4 break-inside-avoid overflow-hidden rounded-2xl border border-slate-800 bg-black/40"><img src="img/gabinete-esquina.jpg" alt="Gabinete de medidor instalado" loading="lazy" class="w-full h-auto group-hover:scale-105 transition-transform duration-500"><span class="absolute inset-x-0 bottom-0 p-3 text-left text-xs font-semibold text-white bg-gradient-to-t from-black/80 to-transparent">Gabinete de medidor instalado</span></button>
+                <button type="button" data-cat="medidores" data-src="img/gabinete-exterior.jpg" data-title="Gabinete exterior con ventilación" onclick="openImageModal(this.dataset.src,this.dataset.title)" class="group block w-full text-left relative mb-4 break-inside-avoid overflow-hidden rounded-2xl border border-slate-800 bg-black/40"><img src="img/gabinete-exterior.jpg" alt="Gabinete exterior con ventilación" loading="lazy" class="w-full h-auto group-hover:scale-105 transition-transform duration-500"><span class="absolute inset-x-0 bottom-0 p-3 text-left text-xs font-semibold text-white bg-gradient-to-t from-black/80 to-transparent">Gabinete exterior con ventilación</span></button>
+                <button type="button" data-cat="medidores" data-src="img/regulador-gabinete.jpg" data-title="Regulador y manguera flexible" onclick="openImageModal(this.dataset.src,this.dataset.title)" class="group block w-full text-left relative mb-4 break-inside-avoid overflow-hidden rounded-2xl border border-slate-800 bg-black/40"><img src="img/regulador-gabinete.jpg" alt="Regulador y manguera flexible" loading="lazy" class="w-full h-auto group-hover:scale-105 transition-transform duration-500"><span class="absolute inset-x-0 bottom-0 p-3 text-left text-xs font-semibold text-white bg-gradient-to-t from-black/80 to-transparent">Regulador y manguera flexible</span></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: Normativa Técnica y Seguridad en Colombia -->
+    <section id="normativa" class="py-20 bg-[#0b1324] border-y border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/5 text-brand-orangeLight text-xs font-bold uppercase tracking-wider mb-3 border border-white/10">
+                    <i class="fa-solid fa-shield-halved text-brand-orange"></i> Marco Normativo en Colombia
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-4">
+                    Instalaciones que cumplen la ley y salvan vidas
+                </h2>
+                <p class="text-slate-400 text-sm sm:text-base">
+                    En Colombia, las redes e instalaciones de gas natural no admiten improvisaciones. Cada componente y procedimiento que aplicamos en <strong>EDILGASS</strong> se rige estrictamente por la normativa técnica colombiana.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8 mb-12">
+                
+                <!-- Card 1: PE-AL-PE -->
+                <div class="glass-card rounded-3xl overflow-hidden flex flex-col justify-between group">
+                    <div>
+                        <div class="h-44 w-full overflow-hidden bg-slate-900 relative">
+                            <img src="img/red-pe-al-pe.jpg" alt="Red de tubería PE-AL-PE con accesorios de compresión y válvulas de corte" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 object-[50%_58%]">
+                            <span class="absolute top-3 left-3 bg-black/70 text-white text-xs font-bold px-2.5 py-1 rounded-lg shadow-md">
+                                Tubería PE-AL-PE
+                            </span>
+                        </div>
+
+                        <div class="p-6">
+                            <span class="text-[11px] font-bold text-brand-orangeLight uppercase tracking-wider">Norma NTC 6015 / ISO 17484-1</span>
+                            <h3 class="text-lg font-bold text-white mt-1 mb-3">Tubería PE-AL-PE y Accesorios</h3>
+                            <p class="text-xs text-slate-400 leading-relaxed mb-4">
+                                Tubería multicapa certificada bajo la norma <strong>NTC 6015</strong> y estándares internacionales <strong>ISO 17484-1 / AS 4176</strong>.
+                            </p>
+                            <ul class="text-xs text-slate-300 space-y-2 mb-4">
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-orangeLight"></i> Resistencia a presiones hasta <strong>500 kPa (5 bar)</strong></li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-orangeLight"></i> Cero corrosión interna o externa</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-orangeLight"></i> Vida útil estimada de hasta <strong>50 años</strong></li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-orangeLight"></i> Accesorios certificados con sello de conformidad</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <p class="text-[11px] text-slate-300 bg-white/5 p-2.5 rounded-xl border border-white/10">
+                            <i class="fa-solid fa-triangle-exclamation text-brand-orange"></i> <strong>Regla técnica:</strong> Nunca mezclar sistemas de diferentes fabricantes o usar accesorios genéricos sin certificación.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card 2: Cobre de Alta Exigencia -->
+                <div class="glass-card rounded-3xl overflow-hidden flex flex-col justify-between group">
+                    <div>
+                        <div class="h-44 w-full overflow-hidden bg-slate-900 relative">
+                            <img src="img/valvula-corte-bronce.jpg" alt="Válvula de corte de bronce con manija amarilla y manguera flexible" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 object-[50%_38%]">
+                            <span class="absolute top-3 left-3 bg-black/70 text-white text-xs font-bold px-2.5 py-1 rounded-lg shadow-md">
+                                Válvulas de corte
+                            </span>
+                        </div>
+
+                        <div class="p-6">
+                            <span class="text-[11px] font-bold text-brand-orangeLight uppercase tracking-wider">Reglamento Gas Combustible</span>
+                            <h3 class="text-lg font-bold text-white mt-1 mb-3">Tuberías de Cobre y Hermeticidad</h3>
+                            <p class="text-xs text-slate-400 leading-relaxed mb-4">
+                                Utilizado tradicionalmente en tramos específicos de alta exigencia, conexiones a la vista o cuartos técnicos de gas.
+                            </p>
+                            <ul class="text-xs text-slate-300 space-y-2 mb-4">
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-orange"></i> Cobre rígido y flexible tipo L o K normado</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-orange"></i> Soldadura con aleación de plata adecuada</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-orange"></i> Válvulas de corte de paso rápido homologadas</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-orange"></i> Ensayos de estanqueidad para evitar microporos</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <p class="text-[11px] text-slate-300 bg-slate-800/60 p-2.5 rounded-xl border border-slate-700">
+                            <i class="fa-solid fa-wrench text-brand-orange"></i> Conexiones seguras y duraderas que resisten vibraciones y exigencias térmicas.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card 3: Revisión obligatoria cada 5 años -->
+                <div class="glass-card rounded-3xl overflow-hidden flex flex-col justify-between group">
+                    <div>
+                        <div class="h-44 w-full overflow-hidden bg-slate-900 relative">
+                            <img src="img/gabinete-medidor.jpg" alt="Gabinete metálico ventilado para medidor de gas natural" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <span class="absolute top-3 left-3 bg-black/70 text-white text-xs font-bold px-2.5 py-1 rounded-lg shadow-md">
+                                Revisión obligatoria
+                            </span>
+                        </div>
+
+                        <div class="p-6">
+                            <span class="text-[11px] font-bold text-brand-orangeLight uppercase tracking-wider">Inspección Obligatoria (5 Años)</span>
+                            <h3 class="text-lg font-bold text-white mt-1 mb-3">Revisión Periódica Obligatoria</h3>
+                            <p class="text-xs text-slate-400 leading-relaxed mb-4">
+                                La ley colombiana exige una <strong>inspección periódica obligatoria cada 5 años</strong> en el sector residencial y comercial para evitar la suspensión del servicio.
+                            </p>
+                            <ul class="text-xs text-slate-300 space-y-2 mb-4">
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-orangeLight"></i> Con un organismo de inspección, independiente de la distribuidora</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-orangeLight"></i> Revisiones obligatorias cada 5 años</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-orangeLight"></i> <strong>Preparación previa de tu red:</strong> Corregimos fugas o defectos antes de la inspección oficial.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <p class="text-[11px] text-slate-300 bg-white/5 p-2.5 rounded-xl border border-white/10">
+                            <i class="fa-solid fa-circle-check text-brand-orangeLight"></i> Te evitas rechazos, multas o cortes preventivos de gas por parte de la distribuidora.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Callout: Peligros de Monóxido de Carbono -->
+            <div class="bg-[#0e1628] rounded-3xl p-8 sm:p-10 text-white shadow-2xl flex flex-col lg:flex-row items-center justify-between gap-6 border border-slate-700/80">
+                <div class="space-y-2 text-center lg:text-left">
+                    <span class="inline-block px-3 py-1 rounded-full bg-white/5 text-slate-200 text-xs font-bold border border-white/10">
+                        <i class="fa-solid fa-skull-crossbones"></i> Seguridad Vital para tu Familia
+                    </span>
+                    <h3 class="text-2xl font-bold">Cero tolerancia a fugas de monóxido y hollín</h3>
+                    <p class="text-slate-300 text-xs sm:text-sm max-w-2xl leading-relaxed">
+                        Una llama amarilla en la estufa o un calentador sin desfogue técnico acumula hollín y libera monóxido de carbono (un gas invisible, inodoro y mortal). Nuestro equipo garantiza la combustión limpia (flama azul) y la correcta ventilación exigida por ley.
+                    </p>
+                </div>
+                <a href="https://wa.me/573112453049?text=Hola%20EDILGASS,%20necesito%20una%20revisión%20técnica%20de%20seguridad%20en%20mi%20gasodoméstico" target="_blank" class="px-6 py-3.5 rounded-xl btn-brand-accent text-white font-extrabold text-sm w-full lg:w-auto justify-center shadow-xl flex items-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span>Solicitar Revisión Técnica</span>
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECTION: Preguntas frecuentes -->
+    <section id="preguntas" class="py-20 bg-[#070d18] border-t border-slate-800">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10">
+                <span class="text-brand-orangeLight font-bold uppercase tracking-wider text-xs">Preguntas frecuentes</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">Resolvemos tus dudas</h2>
+            </div>
+            <div class="space-y-3"><details class="group glass-card rounded-2xl px-5 py-4"><summary class="flex items-center justify-between gap-4 cursor-pointer list-none font-semibold text-white text-sm sm:text-base">¿Cada cuánto es la revisión obligatoria?<i class="fa-solid fa-chevron-down text-xs text-brand-orangeLight transition-transform group-open:rotate-180"></i></summary><p class="text-slate-400 text-sm leading-relaxed mt-3">Cada 5 años. La realiza un organismo de inspección independiente de la distribuidora, y nosotros te ayudamos a dejar tu instalación lista para esa revisión.</p></details><details class="group glass-card rounded-2xl px-5 py-4"><summary class="flex items-center justify-between gap-4 cursor-pointer list-none font-semibold text-white text-sm sm:text-base">¿Cuánto demora una instalación?<i class="fa-solid fa-chevron-down text-xs text-brand-orangeLight transition-transform group-open:rotate-180"></i></summary><p class="text-slate-400 text-sm leading-relaxed mt-3">Depende de qué tan larga sea la tubería, desde el centro de medición (la caja) hasta los puntos de gas: cocina, calentador, asador o terraza de asados. Lo confirmamos en la visita.</p></details><details class="group glass-card rounded-2xl px-5 py-4"><summary class="flex items-center justify-between gap-4 cursor-pointer list-none font-semibold text-white text-sm sm:text-base">¿Cómo se hace la cotización?<i class="fa-solid fa-chevron-down text-xs text-brand-orangeLight transition-transform group-open:rotate-180"></i></summary><p class="text-slate-400 text-sm leading-relaxed mt-3">Nos cuentas por llamada o WhatsApp cuántos puntos de gas necesitas, vamos al predio y cotizamos según el trabajo, la mano de obra y los materiales.</p></details><details class="group glass-card rounded-2xl px-5 py-4"><summary class="flex items-center justify-between gap-4 cursor-pointer list-none font-semibold text-white text-sm sm:text-base">¿Hay que romper las paredes?<i class="fa-solid fa-chevron-down text-xs text-brand-orangeLight transition-transform group-open:rotate-180"></i></summary><p class="text-slate-400 text-sm leading-relaxed mt-3">Depende de la casa. En la visita se define si se hace regata para meter la tubería. Si hay que hacer algún trabajo extra, te lo explicamos y buscamos la mejor solución.</p></details><details class="group glass-card rounded-2xl px-5 py-4"><summary class="flex items-center justify-between gap-4 cursor-pointer list-none font-semibold text-white text-sm sm:text-base">¿Atienden emergencias por fuga?<i class="fa-solid fa-chevron-down text-xs text-brand-orangeLight transition-transform group-open:rotate-180"></i></summary><p class="text-slate-400 text-sm leading-relaxed mt-3">Sí. A veces estamos ocupados en otra obra; si no podemos llegar de inmediato, cierra la llave principal del contador, abre ventanas, no enciendas nada y sal de la vivienda mientras se disipa el olor.</p></details><details class="group glass-card rounded-2xl px-5 py-4"><summary class="flex items-center justify-between gap-4 cursor-pointer list-none font-semibold text-white text-sm sm:text-base">¿Ofrecen financiación?<i class="fa-solid fa-chevron-down text-xs text-brand-orangeLight transition-transform group-open:rotate-180"></i></summary><p class="text-slate-400 text-sm leading-relaxed mt-3">No, por ahora no ofrecemos financiación.</p></details><details class="group glass-card rounded-2xl px-5 py-4"><summary class="flex items-center justify-between gap-4 cursor-pointer list-none font-semibold text-white text-sm sm:text-base">¿En qué zonas trabajan?<i class="fa-solid fa-chevron-down text-xs text-brand-orangeLight transition-transform group-open:rotate-180"></i></summary><p class="text-slate-400 text-sm leading-relaxed mt-3">Belén, Cerinza, Santa Rosa, Duitama, Sogamoso, Paipa y Tunja (Boyacá).</p></details></div>
+        </div>
+    </section>
+
+    <!-- Quotation Request Section (Dark Glassmorphism) -->
+    <section id="cotizacion" class="py-24 bg-[#070d18] relative overflow-hidden">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <div class="inline-flex items-center transition-transform duration-300 hover:scale-105">
+                    <img src="logo-edilgass.png" alt="EDILGASS" class="logo-img h-10 sm:h-11 w-auto object-contain">
+                </div>
+                <br>
+                <span class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/5 text-brand-orangeLight text-xs font-bold uppercase tracking-wider mb-3 border border-white/10">
+                    <i class="fa-solid fa-envelope-open-text text-brand-orange"></i> Cotización Directa
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-black text-white tracking-tight mb-3">
+                    Solicita tu Cotización al Correo
+                </h2>
+                <p class="text-slate-400 text-sm sm:text-base">
+                    Envía los detalles de tu requerimiento. Revisamos tu solicitud y te respondemos con una propuesta técnica clara y sin compromiso.
+                </p>
+            </div>
+
+            <!-- Tarjeta del Formulario con la línea de marca Azul/Naranja -->
+            <div class="bg-[#0f172a]/95 rounded-3xl shadow-2xl border border-slate-700/80 overflow-hidden backdrop-blur-md">
+                <div class="brand-line"></div>
+                <div class="p-8 sm:p-12">
+                    <form id="quote-form" onsubmit="handleQuoteSubmit(event)" class="space-y-6">
+                        
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <!-- Nombre Completo -->
+                            <div>
+                                <label for="nombre" class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">
+                                    Tu Nombre y Apellido <span class="text-brand-orange">*</span>
+                                </label>
+                                <div class="relative">
+                                    <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-500">
+                                        <i class="fa-solid fa-user"></i>
+                                    </span>
+                                    <input type="text" id="nombre" name="nombre" required placeholder="Ej: Juan Pérez"
+                                        class="w-full pl-10 pr-4 py-3 rounded-xl bg-[#080d1a] border border-slate-700 text-white placeholder-slate-500 text-sm focus:border-brand-orange focus:ring-2 focus:ring-brand-orange/20 focus:outline-none transition">
+                                </div>
+                            </div>
+
+                            <!-- Correo Electrónico -->
+                            <div>
+                                <label for="correo" class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">
+                                    Correo Electrónico para enviarte la cotización <span class="text-brand-orange">*</span>
+                                </label>
+                                <div class="relative">
+                                    <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-500">
+                                        <i class="fa-solid fa-envelope"></i>
+                                    </span>
+                                    <input type="email" id="correo" name="correo" required placeholder="tuemail@ejemplo.com"
+                                        class="w-full pl-10 pr-4 py-3 rounded-xl bg-[#080d1a] border border-slate-700 text-white placeholder-slate-500 text-sm focus:border-brand-orange focus:ring-2 focus:ring-brand-orange/20 focus:outline-none transition">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <!-- Teléfono / WhatsApp -->
+                            <div>
+                                <label for="telefono" class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">
+                                    Teléfono o WhatsApp de Contacto <span class="text-brand-orange">*</span>
+                                </label>
+                                <div class="relative">
+                                    <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-500">
+                                        <i class="fa-solid fa-phone"></i>
+                                    </span>
+                                    <input type="tel" id="telefono" name="telefono" required placeholder="Ej: 300 123 4567"
+                                        class="w-full pl-10 pr-4 py-3 rounded-xl bg-[#080d1a] border border-slate-700 text-white placeholder-slate-500 text-sm focus:border-brand-orange focus:ring-2 focus:ring-brand-orange/20 focus:outline-none transition">
+                                </div>
+                            </div>
+
+                            <!-- Ciudad / Barrio -->
+                            <div>
+                                <label for="ubicacion" class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">
+                                    Ciudad / Barrio o Dirección
+                                </label>
+                                <div class="relative">
+                                    <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-500">
+                                        <i class="fa-solid fa-location-dot"></i>
+                                    </span>
+                                    <input type="text" id="ubicacion" name="ubicacion" placeholder="Ej: Duitama / Paipa / Barrio Centro"
+                                        class="w-full pl-10 pr-4 py-3 rounded-xl bg-[#080d1a] border border-slate-700 text-white placeholder-slate-500 text-sm focus:border-brand-orange focus:ring-2 focus:ring-brand-orange/20 focus:outline-none transition">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <!-- Tipo de Servicio -->
+                            <div>
+                                <label for="servicio" class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">
+                                    Servicio Requerido <span class="text-brand-orange">*</span>
+                                </label>
+                                <div class="relative">
+                                    <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-500">
+                                        <i class="fa-solid fa-wrench"></i>
+                                    </span>
+                                    <select id="servicio" name="servicio" required
+                                        class="w-full pl-10 pr-4 py-3 rounded-xl bg-[#080d1a] border border-slate-700 text-white text-sm focus:border-brand-orange focus:ring-2 focus:ring-brand-orange/20 focus:outline-none transition">
+                                        <option value="" disabled selected class="bg-slate-900 text-slate-400">Selecciona un servicio</option>
+                                        <option value="Arreglo y Mantenimiento de Calentadores" class="bg-slate-900 text-white">Arreglo y Mantenimiento de Calentadores</option>
+                                        <option value="Mantenimiento y Arreglo de Estufas" class="bg-slate-900 text-white">Mantenimiento y Arreglo de Estufas</option>
+                                        <option value="Instalación de Estufas y Calentadores" class="bg-slate-900 text-white">Instalación de Estufas y Calentadores</option>
+                                        <option value="Instalaciones Residenciales y Comerciales" class="bg-slate-900 text-white">Instalaciones Residenciales y Comerciales (Cobre / PE-AL-PE)</option>
+                                        <option value="Preparación para Revisión Obligatoria" class="bg-slate-900 text-white">Preparación para Revisión Obligatoria (cada 5 años)</option>
+                                        <option value="Detección y Reparación Urgente de Fugas" class="bg-slate-900 text-white">Detección y Reparación Urgente de Fugas</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Tipo de Inmueble -->
+                            <div>
+                                <label for="inmueble" class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">
+                                    Tipo de Inmueble <span class="text-brand-orange">*</span>
+                                </label>
+                                <div class="relative">
+                                    <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-500">
+                                        <i class="fa-solid fa-house"></i>
+                                    </span>
+                                    <select id="inmueble" name="inmueble" required
+                                        class="w-full pl-10 pr-4 py-3 rounded-xl bg-[#080d1a] border border-slate-700 text-white text-sm focus:border-brand-orange focus:ring-2 focus:ring-brand-orange/20 focus:outline-none transition">
+                                        <option value="Residencial (Casa o Apartamento)" class="bg-slate-900 text-white">Residencial (Casa o Apartamento)</option>
+                                        <option value="Comercial (Restaurante, Panadería, Local)" class="bg-slate-900 text-white">Comercial (Restaurante, Panadería, Local)</option>
+                                        <option value="Edificio o Conjunto Residencial" class="bg-slate-900 text-white">Edificio o Conjunto Residencial</option>
+                                        <option value="Industrial" class="bg-slate-900 text-white">Industrial</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Mensaje / Detalles -->
+                        <div>
+                            <label for="detalles" class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">
+                                Detalles del Trabajo o Falla del Equipo <span class="text-brand-orange">*</span>
+                            </label>
+                            <textarea id="detalles" name="detalles" rows="4" required placeholder="Describe la falla (ej: olor a gas, llama amarilla, el calentador se apaga a los 2 minutos, necesitas instalar tubería nueva)..."
+                                class="w-full px-4 py-3 rounded-xl bg-[#080d1a] border border-slate-700 text-white placeholder-slate-500 text-sm focus:border-brand-orange focus:ring-2 focus:ring-brand-orange/20 focus:outline-none transition"></textarea>
+                        </div>
+
+                        <!-- Buttons con Jerarquía Visual UX -->
+                        <div class="flex flex-col sm:flex-row items-center gap-4 pt-2">
+                            <button type="submit" class="w-full sm:flex-1 py-4 px-6 rounded-xl font-bold btn-brand-accent text-sm flex items-center justify-center gap-2 shadow-xl">
+                                <i class="fa-solid fa-paper-plane"></i>
+                                <span>Enviar Solicitud al Correo</span>
+                            </button>
+                            
+                            <button type="button" onclick="sendViaWhatsApp()" class="w-full sm:w-auto py-4 px-6 rounded-xl font-bold btn-brand-primary text-sm flex items-center justify-center gap-2">
+                                <i class="fa-brands fa-whatsapp text-lg"></i>
+                                <span>Cotizar por WhatsApp</span>
+                            </button>
+                        </div>
+
+                        <p class="text-[11px] text-center text-slate-400">
+                            <i class="fa-solid fa-lock text-slate-500 mr-1"></i> Tus datos llegan directo a EDILGASS. Te responderemos a la brevedad posible.
+                        </p>
+                    </form>
+
+                    <!-- Feedback Success Box -->
+                    <div id="quote-success-msg" class="hidden mt-6 p-6 rounded-2xl bg-slate-800/60 border border-white/10 text-slate-300 text-center animate-fade-in">
+                        <div class="w-12 h-12 bg-white/10 text-brand-orangeLight rounded-full flex items-center justify-center mx-auto mb-3 text-xl border border-white/10">
+                            <i class="fa-solid fa-circle-check"></i>
+                        </div>
+                        <h4 class="font-bold text-lg mb-1 text-white">¡Solicitud Lista para Enviar!</h4>
+                        <p class="text-sm text-slate-300 mb-3" id="success-description">
+                            Se abrirá tu cliente de correo para remitir la cotización a <strong>edilbertogomezia@hotmail.com</strong>.
+                        </p>
+                        <span class="text-xs text-brand-orangeLight font-medium">Revisaremos tu mensaje y te responderemos con la solución técnica.</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer de Lujo Armonizado con el Logotipo -->
+    <footer class="bg-[#04070e] text-slate-400 pt-16 pb-12 border-t border-slate-800/80 relative">
+        <div class="brand-line absolute top-0 left-0 right-0"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-slate-800/80">
+                
+                <!-- Columna 1: Marca y descripción -->
+                <div class="lg:col-span-4 space-y-4">
+                    <a href="#inicio" class="inline-block group">
+                        <div class="inline-flex items-center transition-transform duration-300 hover:scale-105">
+                            <img src="logo-edilgass.png" alt="EDILGASS - Gas Natural" class="logo-img h-9 sm:h-11 md:h-12 w-auto object-contain">
+                        </div>
+                    </a>
+
+                    <p class="text-xs text-slate-400 leading-relaxed max-w-sm">Empresa con más de 25 años de experiencia en instalación, mantenimiento y certificación de redes de gas natural para proyectos residenciales, comerciales e industriales.</p>
+
+                    <div class="pt-2">
+                        <p class="text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">Zona de cobertura</p>
+                        <p class="text-xs text-slate-400">Belén · Cerinza · Santa Rosa · Duitama · Sogamoso · Paipa · Tunja (Boyacá)</p>
+                    </div>
+                </div>
+
+                <!-- Columna 2: Enlaces Rápidos -->
+                <div class="lg:col-span-2 space-y-3">
+                    <h4 class="text-sm font-bold text-white uppercase tracking-wider">Enlaces</h4>
+                    <ul class="space-y-2 text-xs text-slate-400 font-medium">
+                        <li><a href="#inicio" class="hover:text-brand-orangeLight transition">Inicio</a></li>
+                        <li><a href="#sobre-mi" class="hover:text-brand-orangeLight transition">Quiénes somos</a></li>
+                        <li><a href="#servicios" class="hover:text-brand-orangeLight transition">Servicios</a></li>
+                    <li><a href="#obras" class="hover:text-brand-orangeLight transition">Obras</a></li>
+<li><a href="#preguntas" class="hover:text-brand-orangeLight transition">Preguntas</a></li>
+                        <li><a href="#normativa" class="hover:text-brand-orangeLight transition">Normativa Colombia</a></li>
+                        <li><a href="#cotizacion" class="hover:text-brand-orangeLight transition">Cotizar al Correo</a></li>
+                    </ul>
+                </div>
+
+                <!-- Columna 3: Servicios y Normas -->
+                <div class="lg:col-span-3 space-y-3">
+                    <h4 class="text-sm font-bold text-white uppercase tracking-wider">Normas y Servicios</h4>
+                    <ul class="space-y-2 text-xs text-slate-400 font-medium">
+                        <li>
+                            <a href="#normativa" class="hover:text-brand-orangeLight transition flex items-center gap-2">
+                                <i class="fa-solid fa-angle-right text-[10px] text-brand-orange"></i> Norma Técnica NTC 6015
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#normativa" class="hover:text-brand-orangeLight transition flex items-center gap-2">
+                                <i class="fa-solid fa-angle-right text-[10px] text-brand-orange"></i> Tubería PE-AL-PE (500 kPa)
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#normativa" class="hover:text-brand-orangeLight transition flex items-center gap-2">
+                                <i class="fa-solid fa-angle-right text-[10px] text-brand-orange"></i> Revisión obligatoria cada 5 años
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#servicios" onclick="prefillQuote('Arreglo y Mantenimiento de Calentadores')" class="hover:text-brand-orangeLight transition flex items-center gap-2">
+                                <i class="fa-solid fa-angle-right text-[10px] text-brand-orangeLight"></i> Calentadores a Gas
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#servicios" onclick="prefillQuote('Mantenimiento y Arreglo de Estufas')" class="hover:text-brand-orangeLight transition flex items-center gap-2">
+                                <i class="fa-solid fa-angle-right text-[10px] text-brand-orange"></i> Estufas y Hornos
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Columna 4: Contacto directo del Técnico -->
+                <div class="lg:col-span-3 space-y-3">
+                    <h4 class="text-sm font-bold text-white uppercase tracking-wider">Contacto</h4>
+                    <p class="text-xs text-slate-400">
+                        Escríbenos para agendar revisiones, instalaciones o resolver dudas técnicas.
+                    </p>
+                    <div class="space-y-2 text-xs text-slate-300 pt-1">
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-phone text-brand-orange"></i>
+                            <span>311 245 3049 · 313 302 5056</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-envelope text-brand-orangeLight"></i>
+                            <span>edilbertogomezia@hotmail.com</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-location-dot text-brand-orangeLight"></i>
+                            <span>Boyacá: Duitama, Sogamoso, Paipa, Tunja y más</span>
+                        </div>
+                    </div>
+                    <div class="pt-3">
+                        <a href="https://wa.me/573112453049?text=Hola%20EDILGASS,%20deseo%20consultar%20un%20servicio" target="_blank" class="inline-block w-full py-2.5 px-4 text-center rounded-xl btn-brand-primary text-xs font-bold">
+                            <i class="fa-brands fa-whatsapp mr-1"></i> Escribir por WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Bottom Copyright & Legal -->
+            <div class="pt-8 flex flex-col sm:flex-row justify-between items-center text-xs text-slate-500 gap-4">
+                <p>&copy; <span id="current-year"></span> <strong>EDILGASS</strong> - Todos los derechos reservados.</p>
+                <div class="flex items-center space-x-6">
+                    <span class="text-slate-400">Gas Natural</span>
+                    <span class="text-slate-400">Boyacá, Colombia</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/573112453049?text=Hola%20EDILGASS,%20necesito%20asesoría"
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="Hablar directamente por WhatsApp"
+       class="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-emerald-500 text-white flex items-center justify-center text-3xl shadow-2xl hover:bg-emerald-600 hover:scale-110 active:scale-95 transition-all duration-300 group">
+        <i class="fa-brands fa-whatsapp"></i>
+        <span class="absolute right-16 top-2.5 px-3 py-1.5 rounded-lg bg-black text-white text-xs font-medium whitespace-nowrap shadow-lg opacity-0 pointer-events-none group-hover:opacity-100 transition-opacity duration-200">
+            Escríbenos por WhatsApp
+        </span>
+    </a>
+
+    <!-- Modal para Ver Foto Completa en Alta Definición -->
+    <div id="image-modal" class="fixed inset-0 z-50 bg-black/95 hidden flex items-center justify-center p-3 sm:p-6" onclick="closeImageModal()" role="dialog" aria-modal="true" aria-label="Foto ampliada">
+        <button onclick="closeImageModal()" class="absolute top-3 right-3 sm:top-5 sm:right-5 w-11 h-11 rounded-full bg-white/10 hover:bg-brand-orange text-white flex items-center justify-center text-lg transition" aria-label="Cerrar"><i class="fa-solid fa-xmark"></i></button>
+        <button id="modal-prev" onclick="event.stopPropagation(); stepImage(-1)" class="absolute top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white/10 hover:bg-white/25 text-white flex items-center justify-center transition left-2 sm:left-6" aria-label="Foto anterior"><i class="fa-solid fa-chevron-left"></i></button>
+        <button id="modal-next" onclick="event.stopPropagation(); stepImage(1)" class="absolute top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white/10 hover:bg-white/25 text-white flex items-center justify-center transition right-2 sm:right-6" aria-label="Foto siguiente"><i class="fa-solid fa-chevron-right"></i></button>
+        <figure class="max-w-5xl w-full flex flex-col items-center" onclick="event.stopPropagation()">
+            <img id="modal-img" src="" alt="" class="max-h-[78vh] max-w-full w-auto object-contain rounded-xl">
+            <figcaption class="mt-3 text-center">
+                <p id="modal-title" class="text-white text-sm font-semibold"></p>
+                <p id="modal-count" class="text-xs text-slate-400 mt-1"></p>
+            </figcaption>
+        </figure>
+    </div>
+
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
