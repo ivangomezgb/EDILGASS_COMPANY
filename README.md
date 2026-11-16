@@ -1,4 +1,4 @@
-# EDILGASS - Landing Page Oficial de Gas Natural
+# EDILGASS - Landing Page Oficial de EDLGASS
 
 Landing page moderna, responsiva y de alto impacto desarrollada para la empresa de gas natural **EDILGASS**.
 
