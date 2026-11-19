@@ -4,6 +4,22 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+    // 0. Intro Splash Screen (Efecto Chispa / Encendido)
+    const introSplash = document.getElementById('intro-splash');
+    if (introSplash) {
+        let closed = false;
+        const closeSplash = () => {
+            if (closed) return;
+            closed = true;
+            introSplash.classList.add('intro-splash--exit');
+            setTimeout(() => {
+                introSplash.remove();
+            }, 450);
+        };
+        setTimeout(closeSplash, 1550);
+        introSplash.addEventListener('click', closeSplash);
+    }
+
     // 1. Actualizar año en el pie de página dinámicamente
     const currentYearEl = document.getElementById('current-year');
     if (currentYearEl) {
@@ -70,9 +86,20 @@ function handleQuoteSubmit(event) {
     const inmueble = document.getElementById('inmueble').value;
     const detalles = document.getElementById('detalles').value.trim();
 
+    const errorBox = document.getElementById('quote-error-msg');
+    const errorText = document.getElementById('quote-error-text');
+
     if (!nombre || !correo || !telefono || !servicio || !detalles) {
-        alert('Por favor completa todos los campos requeridos (*).');
+        if (errorBox && errorText) {
+            errorText.textContent = 'Por favor completa todos los campos requeridos (*).';
+            errorBox.classList.remove('hidden');
+            errorBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
         return;
+    }
+
+    if (errorBox) {
+        errorBox.classList.add('hidden');
     }
 
     // Correo oficial directo del técnico titular de EDILGASS
@@ -198,13 +225,16 @@ document.addEventListener('keydown', (e) => {
     if (e.key === 'ArrowRight') stepImage(1);
 });
 
-document.getElementById('image-modal').addEventListener('touchstart', (e) => { lbTouchX = e.touches[0].clientX; }, { passive: true });
-document.getElementById('image-modal').addEventListener('touchend', (e) => {
-    if (lbTouchX === null) return;
-    const dx = e.changedTouches[0].clientX - lbTouchX;
-    if (Math.abs(dx) > 50) stepImage(dx < 0 ? 1 : -1);
-    lbTouchX = null;
-});
+const imageModal = document.getElementById('image-modal');
+if (imageModal) {
+    imageModal.addEventListener('touchstart', (e) => { lbTouchX = e.touches[0].clientX; }, { passive: true });
+    imageModal.addEventListener('touchend', (e) => {
+        if (lbTouchX === null) return;
+        const dx = e.changedTouches[0].clientX - lbTouchX;
+        if (Math.abs(dx) > 50) stepImage(dx < 0 ? 1 : -1);
+        lbTouchX = null;
+    });
+}
 
 /**
  * Filtro de la galería de trabajos por categoría
@@ -218,7 +248,9 @@ function filterGallery(cat) {
         b.classList.toggle('bg-brand-orange', on);
         b.classList.toggle('border-brand-orange', on);
         b.classList.toggle('text-white', on);
-        b.classList.toggle('border-white/20', !on);
-        b.classList.toggle('text-slate-300', !on);
+        b.classList.toggle('shadow-lg', on);
+        b.classList.toggle('bg-[#003bb3]/30', !on);
+        b.classList.toggle('border-[#003bb3]/60', !on);
+        b.classList.toggle('text-slate-200', !on);
     });
 }
