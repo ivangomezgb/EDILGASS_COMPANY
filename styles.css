@@ -1,15 +1,16 @@
 /* ==========================================================================
-   EDILGASS - Sistema de diseño sobrio y adaptable
-   Fondo azul noche + un único acento naranja de la marca.
+   EDILGASS - Sistema de diseño sobrio: Azul Rey + Azul Noche + Naranja Marca
    ========================================================================== */
 
 :root {
     --brand-orange: #fa5601;
     --brand-orange-light: #ff7326;
+    --brand-blue-rey: #003bb3;
+    --brand-blue-rey-dark: #002880;
     --bg-base: #070d18;
     --bg-surface: #0b1324;
     --bg-card: #101a2e;
-    --border-soft: rgba(255, 255, 255, 0.08);
+    --border-soft: rgba(0, 59, 179, 0.35);
 }
 
 /* ---------- Base y adaptabilidad ---------- */
@@ -45,12 +46,16 @@ h1, h2, h3, h4, h5, h6 {
 .glass-card {
     background: var(--bg-card);
     border: 1px solid var(--border-soft);
-    box-shadow: 0 8px 24px -8px rgba(0, 0, 0, 0.5);
-    transition: transform 0.3s ease, border-color 0.3s ease;
+    box-shadow: 0 8px 24px -8px rgba(0, 0, 0, 0.55);
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 @media (hover: hover) {
-    .glass-card:hover { transform: translateY(-3px); border-color: rgba(255, 255, 255, 0.2); }
+    .glass-card:hover {
+        transform: translateY(-3px);
+        border-color: rgba(37, 99, 235, 0.6);
+        box-shadow: 0 12px 30px -10px rgba(0, 59, 179, 0.35);
+    }
 }
 
 /* ---------- Botones ---------- */
@@ -65,18 +70,26 @@ h1, h2, h3, h4, h5, h6 {
 .btn-brand-accent:hover { background: #ff6a1a; transform: translateY(-1px); }
 .btn-brand-accent:active { transform: translateY(0); }
 
-/* Secundario: contorno suave */
+/* Secundario: Azul Rey intenso */
 .btn-brand-primary {
-    background: rgba(255, 255, 255, 0.04);
+    background: linear-gradient(135deg, #003bb3 0%, #002b85 100%);
     color: #ffffff;
     min-height: 44px;
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+    border: 1px solid rgba(59, 130, 246, 0.45);
+    box-shadow: 0 8px 20px -10px rgba(0, 59, 179, 0.65);
+    transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
 }
-.btn-brand-primary:hover { background: rgba(255, 255, 255, 0.1); border-color: rgba(255, 255, 255, 0.3); transform: translateY(-1px); }
+.btn-brand-primary:hover {
+    background: linear-gradient(135deg, #0047d6 0%, #003bb3 100%);
+    border-color: rgba(96, 165, 250, 0.65);
+    transform: translateY(-1px);
+}
 .btn-brand-primary:active { transform: translateY(0); }
 
-.brand-line { height: 3px; background: var(--brand-orange); }
+.brand-line {
+    height: 3px;
+    background: linear-gradient(90deg, #003bb3 0%, #2563eb 50%, #fa5601 50%, #ff7326 100%);
+}
 
 /* Logo transparente: contorno blanco fino para que el azul se lea sobre el fondo oscuro */
 .logo-img {
@@ -92,20 +105,154 @@ a[aria-label="Hablar directamente por WhatsApp"] {
 /* Preguntas frecuentes: sin el triángulo por defecto en Safari */
 summary::-webkit-details-marker { display: none; }
 
+/* ---------- Barra superior animada (Marquee) ---------- */
+.topbar-marquee {
+    -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 3%, #000 97%, transparent 100%);
+    mask-image: linear-gradient(90deg, transparent 0%, #000 3%, #000 97%, transparent 100%);
+}
+
+.topbar-track {
+    display: flex;
+    width: max-content;
+    animation: topbarMarquee 28s linear infinite;
+}
+
+.topbar-marquee:hover .topbar-track {
+    animation-play-state: paused;
+}
+
+@keyframes topbarMarquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* ---------- Intro Splash Screen: Entrada Desenfocada Minimalista y Fluida ---------- */
+#intro-splash {
+    min-height: 100vh;
+    min-height: 100dvh;
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+    background: rgba(7, 13, 24, 0.62);
+    -webkit-backdrop-filter: blur(18px);
+    backdrop-filter: blur(18px);
+    animation: introAutoDismiss 0.45s ease-out 2.2s forwards;
+    will-change: transform, opacity;
+}
+
+.intro-ambient-glow {
+    position: absolute;
+    top: 44%;
+    left: 50%;
+    width: clamp(260px, 82vw, 520px);
+    height: clamp(180px, 46vw, 300px);
+    transform: translate3d(-50%, -50%, 0);
+    background:
+        radial-gradient(ellipse at 38% 50%, rgba(0, 59, 179, 0.52) 0%, transparent 62%),
+        radial-gradient(ellipse at 64% 50%, rgba(250, 86, 1, 0.34) 0%, transparent 60%);
+    opacity: 0;
+    will-change: transform, opacity;
+    animation: introGlowPulse 1.2s ease-out forwards;
+}
+
+.intro-logo-stage {
+    opacity: 0;
+    will-change: transform, opacity;
+    animation: introLogoIgnite 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.08s forwards;
+}
+
+.intro-logo-img {
+    width: clamp(225px, 74vw, 420px);
+    height: auto;
+    object-fit: contain;
+}
+
+.intro-ignition-bar {
+    height: 4px;
+    border-radius: 9999px;
+    background: linear-gradient(90deg, #003bb3 0%, #2563eb 45%, #fa5601 60%, #ff7326 100%);
+    box-shadow: 0 0 14px rgba(250, 86, 1, 0.55), 0 0 12px rgba(0, 59, 179, 0.55);
+    transform: scaleX(0);
+    transform-origin: center;
+    will-change: transform, opacity;
+    animation: introLineExpand 0.55s cubic-bezier(0.22, 1, 0.36, 1) 0.32s forwards;
+}
+
+.intro-text-stage {
+    opacity: 0;
+    will-change: transform, opacity;
+    animation: introTextReveal 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.48s forwards;
+}
+
+.intro-headline {
+    font-size: clamp(1.35rem, 5.8vw, 2.75rem);
+    letter-spacing: clamp(0.1em, 1.2vw, 0.24em);
+    line-height: 1.15;
+    text-shadow: 0 4px 20px rgba(0, 59, 179, 0.55);
+}
+
+.intro-splash--exit {
+    transform: scale3d(1.06, 1.06, 1);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: transform 0.42s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.38s ease, visibility 0.42s;
+}
+
+@keyframes introAutoDismiss {
+    to {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+    }
+}
+
+@keyframes introGlowPulse {
+    0% { opacity: 0; transform: translate3d(-50%, -50%, 0) scale(0.7); }
+    100% { opacity: 0.95; transform: translate3d(-50%, -50%, 0) scale(1); }
+}
+
+@keyframes introLogoIgnite {
+    0% {
+        opacity: 0;
+        transform: scale3d(0.84, 0.84, 1);
+    }
+    70% {
+        opacity: 1;
+        transform: scale3d(1.03, 1.03, 1);
+    }
+    100% {
+        opacity: 1;
+        transform: scale3d(1, 1, 1);
+    }
+}
+
+@keyframes introLineExpand {
+    0% { transform: scaleX(0); opacity: 0.4; }
+    100% { transform: scaleX(1); opacity: 1; }
+}
+
+@keyframes introTextReveal {
+    0% {
+        opacity: 0;
+        transform: translate3d(0, 12px, 0);
+    }
+    100% {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@media (max-width: 380px) {
+    .intro-logo-img { width: 82vw; }
+    .intro-headline { font-size: 1.25rem; letter-spacing: 0.08em; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #intro-splash { display: none !important; }
+}
+
 /* ---------- Pantallas pequeñas ---------- */
 @media (max-width: 400px) {
     html { scroll-padding-top: 4.5rem; }
     .glass-card { box-shadow: none; }
-}
-
-/* ---------- Scrollbar discreta ---------- */
-::-webkit-scrollbar { width: 9px; }
-::-webkit-scrollbar-track { background: var(--bg-base); }
-::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 9999px; border: 2px solid var(--bg-base); }
-::-webkit-scrollbar-thumb:hover { background: var(--brand-orange); }
-
-/* ---------- Accesibilidad: respetar "reducir movimiento" ---------- */
-@media (prefers-reduced-motion: reduce) {
-    html { scroll-behavior: auto; }
-    *, *::before, *::after { animation: none !important; transition: none !important; }
 }
